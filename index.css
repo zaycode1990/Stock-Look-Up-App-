@@ -1,0 +1,17 @@
+.hero-header {
+    text-align: center;
+    margin-top: 100px;
+    font-weight: 900;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+body {
+    text-align:center;
+    background-color: khaki;
+}
+
+.stock-search {
+display: inline-block;
+margin-top: 50px;
+}
