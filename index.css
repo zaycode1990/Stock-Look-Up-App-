@@ -16,6 +16,12 @@ display: inline-block;
 margin-top: 50px;
 }
 
+#mySearch {
+    height: 30px;
+    width: 200px;
+    
+}
+
 #stock-table {
 
     box-shadow: 0 0 10px rgba(0, 0, 0,1);

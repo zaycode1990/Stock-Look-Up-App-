@@ -40,17 +40,25 @@ function stockLookUp(tickerSymb) {
         const priceLow = document.createElement('td')
         const openPrice = document.createElement('td')
         const tradingVol = document.createElement('td')
+        const deleteRow = document.createElement('td')
         const weightAveragePrice = document.createElement('td')
-            tableHead.textContent = `${tickerSymb}`
-            closingPrice.textContent = `${day.c}`
-            priceHigh.textContent = `${day.h}`
-            priceLow.textContent = `${day.l}`
-            openPrice.textContent = `${day.o}`      
-            tradingVol.textContent = `${day.v}`
-            weightAveragePrice.textContent = `${day.vw}`          
-            tableRow.append(tableHead, closingPrice, priceHigh, priceLow, openPrice, tradingVol, weightAveragePrice)
+        const deleteBtn = document.createElement('button')
+        deleteBtn.type = "button"
+        tableHead.textContent = `${tickerSymb}`
+        closingPrice.textContent = `${day.c}`
+        priceHigh.textContent = `${day.h}`
+        priceLow.textContent = `${day.l}`
+        openPrice.textContent = `${day.o}`      
+        tradingVol.textContent = `${day.v}`
+        weightAveragePrice.textContent = `${day.vw}`  
+        tableRow.append(tableHead, closingPrice, priceHigh, priceLow, openPrice, tradingVol, weightAveragePrice, deleteRow)
         table.append(tableRow)
-      }
+        deleteRow.append(deleteBtn)
+        deleteBtn.innerText = "Delete"
+        deleteBtn.addEventListener('click', (e) => e.target.parentNode.parentNode.remove())
+        
+            
+        }
       renderStockTable()
     }
     //
@@ -58,38 +66,11 @@ function stockLookUp(tickerSymb) {
     .catch(err => console.log(err))  
     
        }
-    //    else {   
-    //   alert("Not a valid ticker symbol!")
-    //    }}
-       
-   
-        
-   
-
- 
 }
 
-function renderStockTable() {
-  const table = document.getElementById('stock-table')
-  const tableRow = document.createElement("tr")
-  const tableHead = document.createElement('th')
-  const tableBody = document.createElement('tb')
-  const closingPrice = document.createElement('td')
-  closingPrice.textContent = `${day.c}`
-  const priceHigh = document.createElement('td')
-  const priceLow = document.createElement('td')
-  const openPrice = document.createElement('td')
-  const tradingVol = document.createElement('td')
-  const weightAveragePrice = document.createElement('td')
-  tableRow.append(tableHead, closingPrice, priceHigh, priceLow, openPrice, tradingVol, weightAveragePrice)
-  
-  table.append(tableRow)
-
-  
-  
 
 
-}
+
 
 
 
