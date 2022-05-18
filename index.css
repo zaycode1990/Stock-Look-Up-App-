@@ -8,10 +8,35 @@
 
 body {
     text-align:center;
-    background-color: khaki;
+    background-color:  white;
 }
 
 .stock-search {
 display: inline-block;
 margin-top: 50px;
+}
+
+#stock-table {
+
+    box-shadow: 0 0 10px rgba(0, 0, 0,1);
+    border-collapse: collapse;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+    font-weight: bold;
+    margin: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.touch-up *{
+    padding: 5px;
+    border: 5px;
+    border: solid;
+    
+}
+
+.style-new-row *{
+    padding: 5px;
+    border: 5px;
+    border: solid;
 }
