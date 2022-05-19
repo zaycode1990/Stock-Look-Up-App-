@@ -29,38 +29,8 @@ function stockLookUp(tickerSymb) {
     console.log(day)
     console.log(min)
     console.log(prevDay)
-    function renderStockTable() {
-        const table = document.getElementById('stock-table')
-        const tableRow = document.createElement("tr")
-        tableRow.classList.add('style-new-row')
-        const tableHead = document.createElement('th')
-        const tableBody = document.createElement('tb')
-        const closingPrice = document.createElement('td')
-        const priceHigh = document.createElement('td')
-        const priceLow = document.createElement('td')
-        const openPrice = document.createElement('td')
-        const tradingVol = document.createElement('td')
-        const deleteRow = document.createElement('td')
-        const weightAveragePrice = document.createElement('td')
-        const deleteBtn = document.createElement('button')
-        deleteBtn.type = "button"
-        tableHead.textContent = `${tickerSymb}`
-        closingPrice.textContent = `${day.c}`
-        priceHigh.textContent = `${day.h}`
-        priceLow.textContent = `${day.l}`
-        openPrice.textContent = `${day.o}`      
-        tradingVol.textContent = `${day.v}`
-        weightAveragePrice.textContent = `${day.vw}`  
-        tableRow.append(tableHead, closingPrice, priceHigh, priceLow, openPrice, tradingVol, weightAveragePrice, deleteRow)
-        table.append(tableRow)
-        deleteRow.append(deleteBtn)
-        deleteBtn.innerText = "Delete"
-        deleteBtn.addEventListener('click', (e) => e.target.parentNode.parentNode.remove())
-        
-            
-        }
-      renderStockTable()
-    }
+    renderStockTable(tickerSymb,day)
+  }
     //
     )
     .catch(err => console.log(err))  
@@ -68,11 +38,31 @@ function stockLookUp(tickerSymb) {
        }
 }
 
-
-
-
-
-
-
-
-
+function renderStockTable(ticker,{c, h, l, o, v, vw}) {
+    const table = document.getElementById('stock-table')
+    const tableRow = document.createElement("tr")
+    tableRow.classList.add('style-new-row')
+    const tableHead = document.createElement('th')
+    const tableBody = document.createElement('tb')
+    const closingPrice = document.createElement('td')
+    const priceHigh = document.createElement('td')
+    const priceLow = document.createElement('td')
+    const openPrice = document.createElement('td')
+    const tradingVol = document.createElement('td')
+    const deleteRow = document.createElement('td')
+    const weightAveragePrice = document.createElement('td')
+    const deleteBtn = document.createElement('button')
+      deleteBtn.type = "button"
+      tableHead.textContent = `${ticker}`
+      closingPrice.textContent = `${c}`
+      priceHigh.textContent = `${h}`
+      priceLow.textContent = `${l}`
+      openPrice.textContent = `${o}`      
+      tradingVol.textContent = `${v}`
+      weightAveragePrice.textContent = `${vw}`  
+      tableRow.append(tableHead, closingPrice, priceHigh, priceLow, openPrice, tradingVol, weightAveragePrice, deleteRow)
+      table.append(tableRow)
+      deleteRow.append(deleteBtn)
+      deleteBtn.innerText = "Delete"
+      deleteBtn.addEventListener('click', (e) => e.target.parentNode.parentNode.remove())
+    }
