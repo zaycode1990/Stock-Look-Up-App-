@@ -12,10 +12,10 @@
 </head>
 <body>
     <h1 class="hero-header">Stock Look Up</h1>
-
+   
     <form id="stock-search">
         <div>
-          <input type="search" maxlength="5" id="mySearch" name="$" placeholder="enter ticker symbol">
+          <input type="search" oninput="this.value = this.value.toUpperCase()"  maxlength="5" id="mySearch" name="$" placeholder="enter ticker symbol">
           <button>Search</button>
         </div>
       </form>

@@ -6,9 +6,21 @@
 
 }
 
+.dark .hero-header {
+  
+    color: whitesmoke;
+
+}
+
+
+
 body {
     text-align:center;
     background-color:  white;
+}
+
+.dark {
+    background-color:  #444444;
 }
 
 .stock-search {
@@ -34,6 +46,19 @@ margin-top: 50px;
     margin-right: auto;
 }
 
+.dark #stock-table {
+    box-shadow: 0 0 10px rgb(235, 231, 231);
+    border-collapse: collapse;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+    font-weight: bold;
+    margin: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
 .touch-up *{
     padding: 5px;
     border: 5px;
@@ -41,8 +66,88 @@ margin-top: 50px;
     
 }
 
+.dark .touch-up *{
+    padding: 5px;
+    border: 5px;
+    border: solid;
+    border-color: whitesmoke;
+    color: whitesmoke;
+}
+
 .style-new-row *{
     padding: 5px;
     border: 5px;
     border: solid;
+    border-color: black;
 }
+
+.dark .style-new-row *{
+    border-color: whitesmoke;
+    color: whitesmoke;
+}
+
+
+.cp-style:hover {
+    background-color: rgb(162, 147, 232);
+
+}
+
+.color-blind .cp-style:hover {
+    background-color: #993;
+
+}
+
+
+.ph-style:hover {
+    background-color: rgb(30, 216, 30);
+}
+
+.color-blind .ph-style:hover {
+    background-color: #6699CC;
+}
+
+ .pl-style:hover {
+    background-color: rgb(218, 19, 19)
+}
+.color-blind .pl-style:hover {
+    background-color: #AA4499;
+}
+.op-style:hover {
+    background-color: rgb(99, 203, 217)
+}
+
+.color-blind .op-style:hover {
+    background-color: rgb(92, 84, 84)
+}
+
+.tv-style:hover {
+    background-color: violet
+}
+
+.color-blind .tv-style:hover {
+    background-color: #0D98BA;
+}
+
+.av-style:hover {
+    background-color:rgb(48, 131, 232)
+}
+
+.color-blind .av-style:hover {
+    background-color:rgb(168, 95, 4)
+}
+
+
+.theme-button-style {
+    margin-top: 1%;
+    margin-right: 1%;
+    
+    
+}
+
+.dark .illuminate {
+color: black;
+
+}
+
+
+

@@ -1,13 +1,29 @@
 document.addEventListener('DOMContentLoaded', ()=>{
    
-    
-        console.log(tickerSymbolObj)
-    const stockForm = document.querySelector('#stock-search')
-    
-    stockForm.addEventListener('submit', (e) => {
-e.preventDefault()
+  const stockForm = document.querySelector('#stock-search')
 
-console.log(e.target.querySelector('#mySearch').value)
+ const colorBlindBtn = document.createElement('button')
+  const themeBtn = document.createElement('button')
+  colorBlindBtn.type = "button"
+  colorBlindBtn. textContent = "Colorblind Mode"
+  themeBtn.type = "button"
+  themeBtn.textContent = "Switch Theme"
+  stockForm.append(themeBtn, colorBlindBtn)
+  themeBtn.classList.add('theme-button-style')
+    themeBtn.addEventListener('click', () =>{
+      document.querySelector('body').classList.toggle('dark')
+    })
+
+    colorBlindBtn.addEventListener('click', ()=>{
+    document.querySelector('table').classList.toggle('color-blind')
+    })
+        console.log(tickerSymbolObj)
+        
+        
+        stockForm.addEventListener('submit', (e) => {
+          e.preventDefault()
+          
+          console.log(e.target.querySelector('#mySearch').value)
 stockLookUp(e.target.querySelector('#mySearch').value)  
 stockForm.reset() 
 },)
@@ -40,17 +56,25 @@ function stockLookUp(tickerSymb) {
 
 function renderStockTable(ticker,{c, h, l, o, v, vw}) {
     const table = document.getElementById('stock-table')
+    
     const tableRow = document.createElement("tr")
     tableRow.classList.add('style-new-row')
     const tableHead = document.createElement('th')
     const tableBody = document.createElement('tb')
     const closingPrice = document.createElement('td')
+    closingPrice.classList.add("cp-style")
     const priceHigh = document.createElement('td')
+    priceHigh.classList.add("ph-style")
     const priceLow = document.createElement('td')
+    priceLow.classList.add("pl-style")
     const openPrice = document.createElement('td')
+    openPrice.classList.add("op-style")
     const tradingVol = document.createElement('td')
+    tradingVol.classList.add("tv-style")
     const deleteRow = document.createElement('td')
+    
     const weightAveragePrice = document.createElement('td')
+    weightAveragePrice.classList.add("av-style")
     const deleteBtn = document.createElement('button')
       deleteBtn.type = "button"
       tableHead.textContent = `${ticker}`
@@ -64,5 +88,8 @@ function renderStockTable(ticker,{c, h, l, o, v, vw}) {
       table.append(tableRow)
       deleteRow.append(deleteBtn)
       deleteBtn.innerText = "Delete"
+      deleteBtn.classList.add('illuminate')
       deleteBtn.addEventListener('click', (e) => e.target.parentNode.parentNode.remove())
+      
+
     }
